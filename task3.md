@@ -11,7 +11,7 @@ systemctl enable --now nfs-server
 
  HQ-CLI
 
-прописываем
+
 mkdir /mnt/nfs
 chmod -R 777 /mnt/nfs
 
