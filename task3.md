@@ -18,4 +18,5 @@ chmod -R 777 /mnt/nfs
 /etc/fstab
 
 192.168.100.2:/raid/nfs /mnt/nfs nfs defaults,_netdev 0 0
+mount -av
 df -h 
