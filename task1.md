@@ -11,6 +11,8 @@ mkdir -p /var/lib/samba/sysvol
 search au-team.irpo
 nameserver 127.0.0.1
 
+systemctl restart network
+
 samba-tool domain provision
 
 Administrator password: P@ssw0rd
