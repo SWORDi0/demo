@@ -1,3 +1,4 @@
+BR-SRV
 apt-get update && apt-get install –y ansible sshpass
 
 vim /etc/ansible/hosts
