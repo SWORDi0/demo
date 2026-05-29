@@ -18,13 +18,11 @@ systemctl enable --now mariadb
 
 mariadb -u root
 
-CREATE DATABASE webdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE webdb;
 
 CREATE USER 'webc'@'localhost' IDENTIFIED BY 'P@ssw0rd';
 
 GRANT ALL PRIVILEGES ON webdb.* TO 'webc'@'localhost';
-
-FLUSH PRIVILEGES;
 
 EXIT;
 
