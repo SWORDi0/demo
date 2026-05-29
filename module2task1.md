@@ -7,7 +7,7 @@ rm -rf /var/cache/samba/
 mkdir -p /var/lib/samba/sysvol
 
 samba-tool domain provision
-
+DONT FORGET TO ENTER THE 77.88.8.8 IN ANOTHER WAY YOU DONT HAVE INTERNET ON THE HQ-CLI
 Administrator password: P@ssw0rd
 
 retype
