@@ -41,6 +41,9 @@ services:
       - database
 
 docker compose up -d
+docker compose down
+
+docker compose ps
 
 docker logs -f tespapp
 
