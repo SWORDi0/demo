@@ -32,7 +32,7 @@ services:
       - "8080:8000"
     environment:
       DB_TYPE: maria
-      DB_HOST: 192.168.3.2
+      DB_HOST: database
       DB_PORT: "3306"
       DB_NAME: testdb
       DB_USER: test
