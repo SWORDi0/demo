@@ -5,7 +5,7 @@ mkdir /raid/nfs
 chmod -R 777 /raid/nfs
 /etc/exports
 
-/raid/nfs 192.168.200.0/28(rw,no_root_squash)
+/raid/nfs 192.168.200.0/29(rw,no_root_squash) (CHECK IP AND PREFIX)
 exportfs -arv
 systemctl enable --now nfs-server
 
