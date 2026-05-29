@@ -1,4 +1,4 @@
-hq-srv
+br-srv
 apt-get install task-samba-dc -y
 
 rm -f  /etc/samba/smb.conf
