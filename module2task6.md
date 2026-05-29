@@ -25,7 +25,7 @@ services:
       MARIADB_PASSWORD: P@ssw0rd
       MARIADB_ROOT_PASSWORD: toor
   app:
-    container_name: tespapp
+    container_name: testapp
     image: site:latest
     restart: always
     ports:
@@ -45,7 +45,7 @@ docker compose down
 
 docker compose ps
 
-docker logs -f tespapp
+docker logs -f testapp
 
 you can test it in HQ-CLI by searching 192.168.3.2:8080
 
