@@ -25,3 +25,7 @@ systemctl restart chronyd
 
 for HQ-SRV HQ-CLI HQ-RTR there is 172.16.1.1 iburst
 FOR BR-SRV BR-RTR there is 172.16.2.1 iburst
+
+on kli chronyc sources
+
+on server chronyc clients
