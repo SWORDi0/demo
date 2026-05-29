@@ -6,13 +6,6 @@ rm -rf /var/lib/samba/
 rm -rf /var/cache/samba/
 mkdir -p /var/lib/samba/sysvol
 
-/etc/net/ifaces/ens18/resolv.conf
-
-search au-team.irpo
-nameserver 127.0.0.1
-
-systemctl restart network
-
 samba-tool domain provision
 
 Administrator password: P@ssw0rd
@@ -22,8 +15,14 @@ retype
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 
 overwrite: y
+/etc/net/ifaces/ens18/resolv.conf
 
- systemctl enable --now samba
+search au-team.irpo
+nameserver 127.0.0.1
+
+systemctl restart network
+
+systemctl enable --now samba
 
  samba-tool group add hq
 
