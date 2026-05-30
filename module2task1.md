@@ -6,6 +6,13 @@ rm -rf /var/lib/samba/
 rm -rf /var/cache/samba/
 mkdir -p /var/lib/samba/sysvol
 
+/etc/net/ifaces/ens18/resolv.conf
+
+search au-team.irpo
+nameserver 127.0.0.1
+
+systemctl restart network
+
 samba-tool domain provision
 DONT FORGET TO ENTER THE 77.88.8.8 IN ANOTHER WAY YOU DONT HAVE INTERNET ON THE HQ-CLI
 Administrator password: P@ssw0rd
@@ -15,12 +22,7 @@ retype
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 
 overwrite: y
-/etc/net/ifaces/ens18/resolv.conf
 
-search au-team.irpo
-nameserver 127.0.0.1
-
-systemctl restart network
 
 systemctl enable --now samba
 
