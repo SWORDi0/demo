@@ -1,8 +1,8 @@
 #_______________________________________BR-SRV__________________________________________
 
-mount -o loop /dev/sr0 /mnt
 cp /mnt/playbook/get_hostname_address.yml /etc/ansible/playbook.yml
-mkdir -p /etc/ansible/PC-INFO
+chmod 777 /etc/ansible/playbook.yml
+
 vim /etc/ansible/playbook.yml
 
 - name: PC-INFO
@@ -18,9 +18,12 @@ vim /etc/ansible/playbook.yml
 
 vim /etc/ansible/hosts
 
-[LMX] 
- hosts  
- HQ-SRV  
- HQ-CLI
+hq-rtr ansible_ssh_host=172.16.1.2 ansible_ssh_user=net_admin ansible_ssh_pass=P@ssw0rd
+br-rtr ansible_ssh_host=192.16.3.1 ansible_ssh_user=net_admin ansible_ssh_pass=P@ssw0rd
+[LNX]
+hq-cli ansible_ssh_host=192.16.200.3 ansible_ssh_user=Administrator ansible_ssh_pass=P@ssw0rd
+hq-srv ansible_ssh_host=192.16.100.2 ansible_ssh_user=sshuser ansible_ssh_pass=P@ssw0rd ansible_ssh_port=2026
+
 
 ansible-playbook /etc/ansible/playbook.yml
+mkdir -p /etc/ansible/PC-INFO
