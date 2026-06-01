@@ -15,8 +15,7 @@ systemctl status cups
 lpadmin -p HQ-PDF -E -v ipp://192.168.100.2/printers/Cups-PDF -m everywhere
 lpadmin -d HQ-PDF
 
-В поиске ввести "Print"(или принтер) > Нажать на "Настройки принтера"(Print Settings) > Далее нажать на HQ-PDF > Print Test Page(Отсканировать тестовую страницу)
-
+IN GUI find WIN then in "search" or "finder" search printer, press Print settings, print test page
 
 #_______________________________________HQ-SRV__________________________________________
 
@@ -27,4 +26,4 @@ chmod 777 /raid/nfs/Print.pdf
 
 #_______________________________________HQ-CLI__________________________________________
 
-На рабочем столе нажать на  домашнюю папку > затем подняться на два уровня (До "/") > Найти /mnt/nft > Проверить PDF на валидность.
+on workspace press home or maybe "home papka" > you need go to the / directory, find /mnt/nfs >  then put PDF on the workspace, bistrov need to seen in!
