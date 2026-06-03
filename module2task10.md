@@ -1,6 +1,6 @@
 ISP
 apt-get install apache2-htpasswd
-htpasswd -c /etc/nginx/.htpasswd WEB
+htpasswd -c /etc/nginx/.htpasswd kazimir
 
 P@ssw0rd
 P@ssw0rd
