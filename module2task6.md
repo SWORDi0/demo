@@ -6,46 +6,46 @@ systemctl enable --now docker
 mount /dev/sr0 /mnt/
 
 docker load -i /mnt/docker/site_latest.tar
-docker load -i /mnt/docker/mariadb_latest.tar
+docker load -i /mnt/docker/postgresql_latest.tar
 
 docker images
 
 vim /root/compose.yaml
 
 services:
-  database:
+  db:
     container_name: db
-    image: mariadb:10.11
+    image: postgres:15-alpine
     restart: always
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MARIADB_DATABASE: testdb
-      MARIADB_USER: test
-      MARIADB_PASSWORD: P@ssw0rd
-      MARIADB_ROOT_PASSWORD: toor
-  app:
-    container_name: testapp
+      POSTGRES_DB: testdb3
+      POSTGRES_USER: test3
+      POSTGRES_PASSWORD: P@ssw0rd
+
+  site:
+    container_name: site
     image: site:latest
     restart: always
     ports:
-      - "8080:8000"
+      - "8083:8000"
     environment:
-      DB_TYPE: maria
-      DB_HOST: database
-      DB_PORT: "3306"
-      DB_NAME: testdb
-      DB_USER: test
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: testdb3
+      DB_USER: test3
       DB_PASS: P@ssw0rd
     depends_on:
-      - database
+      - db
 
 docker compose up -d
 docker compose down
 
 docker compose ps
 
-docker logs -f testapp
+docker logs -f site
 
 you can test it in HQ-CLI by searching 192.168.3.2:8080
 
