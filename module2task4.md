@@ -2,7 +2,7 @@ ISP
 apt-get install chrony -y
 vim /etc/chrony.conf
 
-local stratum 5
+local stratum 8
 komment
 #pool pool.ntp.org iburst 
 
